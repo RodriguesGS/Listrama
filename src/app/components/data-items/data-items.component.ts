@@ -8,6 +8,12 @@ interface Task {
   text: string;
   completed: boolean;
 }
+
+interface Task {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 @Component({
   selector: 'app-data-items',
   standalone: true,
@@ -16,6 +22,7 @@ interface Task {
   styleUrl: './data-items.component.scss'
 })
 export class DataItemsComponent implements OnInit {
+  tasks: Task[] = [];
   taskCount = 0;
   private tasksSub!: Subscription
   filter: 'all' | 'active' | 'completed' = 'all'
@@ -37,5 +44,10 @@ export class DataItemsComponent implements OnInit {
   setFilter(filter: 'all' | 'active' | 'completed'): void {
     this.filter = filter;
     this.todoComponent.applyFilter(this.filter);
+  }
+
+  clearTasksCompleted(): void {
+    this.taskService.clearCompleted();
+    this.tasks = this.taskService.filterTasks(this.filter)
   }
 }

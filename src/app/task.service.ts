@@ -39,7 +39,7 @@ export class TaskService {
 
   filterTasks(filter: 'all' | 'active' | 'completed'): Task[] {
     const tasks = this.taskSubject.getValue();
-    
+
     if (filter === 'active') {
       return tasks.filter(task => !task.completed);
     } else if (filter === 'completed') {
@@ -70,5 +70,10 @@ export class TaskService {
 
   getAllTasks(): Task[] {
     return this.taskSubject.getValue();
+  }
+
+  clearCompleted(): void {
+    const tasks = this.taskSubject.getValue().filter(task => !task.completed);
+    this.saveTasks(tasks)
   }
 }
