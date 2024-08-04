@@ -37,6 +37,18 @@ export class TaskService {
     this.saveTasks(tasks);
   }
 
+  filterTasks(filter: 'all' | 'active' | 'completed'): Task[] {
+    const tasks = this.taskSubject.getValue();
+    
+    if (filter === 'active') {
+      return tasks.filter(task => !task.completed);
+    } else if (filter === 'completed') {
+      return tasks.filter(task => task.completed);
+    } else {
+      return tasks;
+    }
+  }
+
   private loadTasks(): Task[] {
     const tasksSaved = localStorage.getItem('tasks');
     return tasksSaved ? JSON.parse(tasksSaved) : [];

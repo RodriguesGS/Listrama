@@ -1,9 +1,18 @@
 <span class="item-left">{{ taskCount }} items left</span>
 
 <div class="btn-actions">
-    <button class="all selected">All</button>
-    <button class="active">Active</button>
-    <button class="completed">Completed</button>
+    <button
+        [class.selected]="filter === 'all'"
+        (click)="setFilter('all')"
+    >All</button>
+    <button
+        [class.selected]="filter === 'active'"
+        (click)="setFilter('active')"
+    >Active</button>
+    <button
+        [class.selected]="filter === 'completed'" 
+        (click)="setFilter('completed')"
+    >Completed</button>
 </div>
 
 <button class="clear">Clear Completed</button>

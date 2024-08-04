@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../task.service';
 import { Subscription } from 'rxjs';
+import { TodoComponent } from '../todo/todo.component';
 
 interface Task {
   id: number;
@@ -17,10 +18,9 @@ interface Task {
 export class DataItemsComponent implements OnInit {
   taskCount = 0;
   private tasksSub!: Subscription
-  tasks: Task[] = [];
   filter: 'all' | 'active' | 'completed' = 'all'
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private todoComponent: TodoComponent) {}
 
   ngOnInit(): void {
     this.tasksSub = this.taskService.tasks$.subscribe(() => {
@@ -34,7 +34,8 @@ export class DataItemsComponent implements OnInit {
     this.taskCount = this.taskService.countTasks();
   }
 
-  toggleCompletion(id: number): void {
-    this.taskService.toggleTaskCompleted(id);
+  setFilter(filter: 'all' | 'active' | 'completed'): void {
+    this.filter = filter;
+    this.todoComponent.applyFilter(this.filter);
   }
 }

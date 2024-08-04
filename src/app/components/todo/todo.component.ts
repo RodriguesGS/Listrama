@@ -18,16 +18,25 @@ interface Task {
 })
 export class TodoComponent implements OnInit {
   tasks: Task[] = [];
+  filter: 'all' | 'active' | 'completed' = 'all';
   
   constructor(public taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.taskService.tasks$.subscribe(tasks => this.tasks = tasks);
+    this.taskService.tasks$.subscribe(() => {
+      this.tasks = this.taskService.filterTasks(this.filter);
+    });
+
     this.addExample();
   }
 
   deleteTask(task: Task):void {
     this.taskService.deleteTask(task.id);
+  }
+
+  applyFilter(filter: 'all' | 'active' | 'completed'): void {
+    this.filter = filter;
+    this.tasks = this.taskService.filterTasks(this.filter)
   }
 
   addExample(): void {
