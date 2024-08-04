@@ -19,7 +19,7 @@ interface Task {
 export class TodoComponent implements OnInit {
   tasks: Task[] = [];
   
-  constructor(private taskService: TaskService) {}
+  constructor(public taskService: TaskService) {}
 
   ngOnInit(): void {
     this.taskService.tasks$.subscribe(tasks => this.tasks = tasks);

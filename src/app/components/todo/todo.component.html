@@ -2,13 +2,18 @@
     <ul class="list">
         <li class="list-item" *ngFor="let task of tasks">
             <div class="checkbox-wrapper">
-                <input type="checkbox" [checked]="task.completed" [id]="'task-' + task.id">
+                <input 
+                    type="checkbox" 
+                    [checked]="task.completed" 
+                    (change)="taskService.toggleTaskCompleted(task.id)"
+                    [id]="'task-' + task.id">
                 <label [for]="'task-' + task.id">{{ task.text }}</label>
             </div>
             <div class="btn-todo">
                 <mat-icon class="action" (click)="deleteTask(task)">close</mat-icon>
             </div>
         </li>
+
         <app-data-items/>
     </ul>
 </div>
