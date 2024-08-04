@@ -3,12 +3,21 @@
     <div class="content">
         <div class="content-header">
             <h1 class="header-title">Listrama</h1>
-            <button mat-raised-button class="theme-btn"><mat-icon class="theme">light_mode</mat-icon></button>
+            <button mat-raised-button class="theme-btn">
+                <mat-icon class="theme">light_mode</mat-icon>
+            </button>
         </div>
 
         <div class="todo-input">
-            <input type="text" name="" id="" placeholder="Create a new todo...">
-            <button class="todo-btn"><mat-icon class="todo-icon">arrow_forward</mat-icon></button>
+            <input 
+                type="text" 
+                [(ngModel)]="newTask" 
+                placeholder="Create a new todo..."
+                (keydown.enter)="addTask()"
+            >
+            <button class="todo-btn" (click)="addTask()">
+                <mat-icon class="todo-icon">arrow_forward</mat-icon>
+            </button>
         </div>
     </div>
 </div>

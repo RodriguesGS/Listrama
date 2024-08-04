@@ -1,33 +1,14 @@
 <div class="container">
     <ul class="list">
-        <li class="list-item">
+        <li class="list-item" *ngFor="let task of tasks">
             <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label>Complete online Javascript course</label>
+                <input type="checkbox" [checked]="task.completed" [id]="'task-' + task.id">
+                <label [for]="'task-' + task.id">{{ task.text }}</label>
             </div>
             <div class="btn-todo">
-                <mat-icon class="action">close</mat-icon>
+                <mat-icon class="action" (click)="deleteTask(task)">close</mat-icon>
             </div>
         </li>
-        <li class="list-item">
-            <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label>Complete online Javascript course</label>
-            </div>
-            <div class="btn-todo">
-                <mat-icon class="action">close</mat-icon>
-            </div>
-        </li>
-        <li class="list-item">
-            <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label>Complete online Javascript course</label>
-            </div>
-            <div class="btn-todo">
-                <mat-icon class="action">close</mat-icon>
-            </div>
-        </li>
-
         <app-data-items/>
     </ul>
 </div>
