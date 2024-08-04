@@ -20,7 +20,7 @@
             .list-item {
                 padding: 15px 30px;
                 width: 100%;
-                border-bottom: 1px solid $dark-grey;
+                border-bottom: 1px solid #313131;
                 color: #fff;
                 display: flex;
                 justify-content: space-between;
@@ -40,7 +40,7 @@
                     cursor: pointer;
                     user-select: none;
                     margin: 10px 0;
-                    font-size: 1.3rem;
+                    font-size: 1.1rem;
 
                     input {
                         appearance: none;
@@ -54,10 +54,9 @@
                         transition: all .3s;
 
                         &:checked {
-                            background-color: #9B59B6;
-                            border-color: #9B59B6;
+                            background-color: $main-color;
+                            border-color: $main-color;
                             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZThlYWVkIj48cGF0aCBkPSJNMzgyLTI0MCAxNTQtNDY4bDU3LTU3IDE3MSAxNzEgMzY3LTM2NyA1NyA1Ny00MjQgNDI0WiIvPjwvc3ZnPg==');
-                            background-size: 25px 25px;
                             background-position: center;
                             background-repeat: no-repeat;
 
@@ -74,10 +73,10 @@
                     opacity: 0;
                     visibility: hidden;
                     transition: .3s ease;
-                    transform-origin: center;
+                    
 
                     &:hover {
-                        transform: rotate(90deg);
+                        transform: rotate(-180deg);
                     }
 
                     .action {

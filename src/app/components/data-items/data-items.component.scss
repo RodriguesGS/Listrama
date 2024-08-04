@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+:host {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    .item-left {
+        color: #6d6d6d;
+        font-size: 1.1rem;
+    }
+
+    .btn-actions {
+        display: flex;
+        gap: 15px;
+
+        button {
+            border: none;
+            font-size: 1.1rem;
+            color: #6d6d6d;
+            background-color: transparent;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                color: $main-color;
+            }
+
+            &.selected {
+                color: $main-color;
+            }
+        }
+    }
+
+    .clear {
+        border: none;
+        background-color: transparent;
+        color: #6d6d6d;
+        font-size: 1.1rem;
+        cursor: pointer;
+        
+
+        &::after {
+            content: '';
+            background-color: $main-color;
+            width: 0%;
+            height: 1px;
+            display: block;
+            transition: .3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
