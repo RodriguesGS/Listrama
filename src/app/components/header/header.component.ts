@@ -16,7 +16,7 @@ interface Task {
   standalone: true,
   imports: [ MatIconModule, MatButtonModule, CommonModule, FormsModule ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   newTask = '';

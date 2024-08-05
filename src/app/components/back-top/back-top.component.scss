@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+
+.backTop {
+    position: fixed;
+    top: 550px;
+    right: 50px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: $color-black;
+    transition: all 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .icon {
+        color: $color-white;
+    }
+}
