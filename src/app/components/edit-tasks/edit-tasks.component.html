@@ -1,0 +1,10 @@
+<h2>Edit Task</h2>
+
+<div class="tasks">
+  <input (keydown.enter)="save()" id="task-text" [(ngModel)]="task.text" placeholder="Task text" />
+</div>
+
+<div class="actions">
+  <button (click)="onNoClick()">Cancel</button>
+  <button (click)="save()">Save</button>
+</div>

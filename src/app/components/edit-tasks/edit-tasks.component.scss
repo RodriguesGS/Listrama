@@ -1,0 +1,75 @@
+@import '../../../styles/variables.scss';
+
+:host {
+    display: block;
+    padding: 20px;
+
+    h2 {
+        font-size: 1.8rem;
+
+        &::after {
+            content: "";
+            width: 4rem;
+            height: 3px;
+            background-color: $main-color;
+            display: block;
+        }
+    }
+
+    .tasks {
+        display: flex;
+        justify-content: center;
+        padding: 5px 0 15px 0;
+        flex-direction: column;
+
+        input {
+            padding: 10px 16px;
+            border-radius: 10px;
+            
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: .3s;
+            font-size: 1rem;
+            outline: none;
+
+            &:hover {
+                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 
+                0 4px 6px rgba(0, 0, 0, 0.1);
+                background-color: #eee;
+            }
+
+            &:focus {
+                
+                background-color: #eee;
+                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 
+                0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            font-size: 1rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0%;
+                height: 2px;
+                background-color: #111;
+                transition: .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}

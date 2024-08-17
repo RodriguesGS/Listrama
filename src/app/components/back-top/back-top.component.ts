@@ -20,13 +20,18 @@ export class BackTopComponent implements OnInit {
 
   @HostListener('window: scroll', [])
   onWindowScroll() {
-    const scrollPosition = window.screenY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (scrollPosition > 300) { 
-      this.isVisible = true;
-      this.renderer.addClass(this.el.nativeElement.querySelector('.backTop'), 'visible');
-    } else {
-      this.isVisible = false;
-      this.renderer.removeClass(this.el.nativeElement.querySelector('.backTop'), 'visible');
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.isVisible = scrollPosition > 300;
+    const backTopElement = this.el.nativeElement.querySelector('.backTop');
+    
+    if (backTopElement) { 
+      if (scrollPosition > 300) {
+        this.isVisible = true;
+        this.renderer.addClass(backTopElement, 'visible');
+      } else {
+        this.isVisible = false;
+        this.renderer.removeClass(backTopElement, 'visible');
+      }
     }
   }
 

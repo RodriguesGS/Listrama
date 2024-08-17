@@ -1,6 +1,6 @@
 <div class="container">
     <ul class="list">
-        <li class="list-item" *ngFor="let task of tasks">
+        <li class="list-item" *ngFor="let task of tasks" (dblclick)="openModal(task)">
             <div class="checkbox-wrapper">
                 <input 
                     type="checkbox" 
