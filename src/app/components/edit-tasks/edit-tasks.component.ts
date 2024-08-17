@@ -10,11 +10,11 @@ interface Task {
 }
 
 @Component({
-  selector: 'app-edit-client',
+  selector: 'app-edit-tasks',
   standalone: true,
-  imports: [ CommonModule, FormsModule ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './edit-tasks.component.html',
-  styleUrl: './edit-tasks.component.scss'
+  styleUrls: ['./edit-tasks.component.scss'] // Correção: styleUrls no plural
 })
 export class EditTasksComponent {
   task: Task;

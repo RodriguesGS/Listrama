@@ -89,4 +89,34 @@
             }
         }
     }
+
+    @media (max-width: 1024px) {
+        .container {
+            width: 100%;
+
+            .list {
+                width: 70%;
+
+                .list-item {
+                    padding: 15px 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+
+            .list {
+                width: 60%;
+
+                .list-item {
+                    .checkbox-wrapper {
+                        font-size: .3rem;
+                    }
+                }
+            }
+        }
+    }
 }
