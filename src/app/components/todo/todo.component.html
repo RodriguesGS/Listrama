@@ -1,19 +1,13 @@
 <div class="container">
     <ul class="list">
-        <li class="list-item" 
-            *ngFor="let task of tasks"
-            [ngClass]="{ 'mobile': isMobile}"
-            (dblclick)="!isMobile && openModal(task)"
-            (click)="isMobile && openModal(task)">
-            
+        <li class="list-item" *ngFor="let task of tasks" (dblclick)="openModal(task)">
             <div class="checkbox-wrapper">
                 <input 
                     type="checkbox" 
                     [checked]="task.completed" 
                     (change)="taskService.toggleTaskCompleted(task.id)"
-                    [id]="'task-' + task.id"
-                    (click)="$event.stopPropagation()">
-                <label (click)="$event.stopPropagation()" [for]="'task-' + task.id">{{ task.text }}</label>
+                    [id]="'task-' + task.id">
+                <label [for]="'task-' + task.id">{{ task.text }}</label>
             </div>
             <div class="btn-todo">
                 <mat-icon class="action" (click)="deleteTask(task)">close</mat-icon>

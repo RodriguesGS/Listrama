@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { HeaderComponent } from "./components/header/header.component";
 import { TodoComponent } from "./components/todo/todo.component";
 import { BackTopComponent } from "./components/back-top/back-top.component";
@@ -11,12 +11,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   isLoading = true;
 
-  ngOnInit(): void {
-    window.addEventListener('load', () => {
-      this.isLoading = false;
-    })
+  ngAfterViewInit(): void {
+    this.isLoading = false
   }
 }

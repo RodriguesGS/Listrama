@@ -8,12 +8,6 @@ interface Task {
   text: string;
   completed: boolean;
 }
-
-interface Task {
-  id: number;
-  text: string;
-  completed: boolean;
-}
 @Component({
   selector: 'app-data-items',
   standalone: true,

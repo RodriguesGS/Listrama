@@ -12,18 +12,18 @@ interface Task {
 @Component({
   selector: 'app-edit-tasks',
   standalone: true,
-  imports: [ CommonModule, FormsModule ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './edit-tasks.component.html',
   styleUrl: './edit-tasks.component.scss'
 })
 export class EditTasksComponent {
-  taskCopy: Task;
+  task: Task;
 
   constructor(
     public dialogRef: MatDialogRef<EditTasksComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.taskCopy = {...data.task}; 
+    this.task = data.task; 
   }
 
   onNoClick(): void {
@@ -31,6 +31,6 @@ export class EditTasksComponent {
   }
 
   save(): void {
-    this.dialogRef.close(this.taskCopy);
+    this.dialogRef.close(this.task);
   }
 }
