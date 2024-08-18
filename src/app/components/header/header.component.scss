@@ -93,3 +93,38 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+
+        .content {
+            .header-title {
+                font-size: 3rem;
+            }
+
+            .todo-input {
+                width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .container {
+        .content {
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .todo-input {
+                width: 300px;
+                
+                
+                input {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}

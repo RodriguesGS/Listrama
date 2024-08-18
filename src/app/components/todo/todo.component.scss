@@ -99,6 +99,10 @@
 
                 .list-item {
                     padding: 15px 30px;
+
+                    .checkbox-wrapper {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -109,11 +113,21 @@
             width: 100%;
 
             .list {
-                width: 60%;
+                width: 100%;
+                border-radius: 0px;
 
                 .list-item {
                     .checkbox-wrapper {
-                        font-size: .3rem;
+                        font-size: .9rem;
+
+                        input {
+                            padding: 8px;
+                        }
+                    }
+
+                    .btn-todo {
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
             }

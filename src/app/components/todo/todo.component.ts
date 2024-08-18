@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { DataItemsComponent } from "../data-items/data-items.component";
 import { CommonModule } from '@angular/common';
@@ -22,15 +22,27 @@ interface Task {
 export class TodoComponent implements OnInit {
   tasks: Task[] = [];
   filter: 'all' | 'active' | 'completed' = 'all';
+  isMobile = false
   
   constructor(public taskService: TaskService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.isMobile = this.checkMobile();
+
     this.taskService.tasks$.subscribe(() => {
       this.tasks = this.taskService.filterTasks(this.filter);
     });
 
     this.addExample();
+  }
+
+  checkMobile(): boolean {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = this.checkMobile()
   }
 
   openModal(task: Task): void { 
