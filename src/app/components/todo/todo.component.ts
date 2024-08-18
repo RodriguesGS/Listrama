@@ -53,7 +53,7 @@ export class TodoComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        result.task
+        Object.assign(task, result)
       }
     });
   }
