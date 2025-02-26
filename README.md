@@ -20,7 +20,7 @@ A simple Todo List
 
 ## Contribute
 
-1. **Clone project**: `git clone [https://github.com/Fernanda-Kipper/Readme-Templates.git](https://github.com/RodriguesGS/Listrama.git)`
+1. **Clone project**: `https://github.com/RodriguesGS/Listrama.git`
 2. **Create feature/branch**: `git checkout -b feature/NAME`
 
 ## License
