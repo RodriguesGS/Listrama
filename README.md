@@ -14,7 +14,7 @@ A simple Todo List
 ## Getting Started
 
 1. **Prerequisites**: `NodeJS, Git 1, Angular CLI`
-2. **Cloning**: `git clone https://github.com/RodriguesGS/AngularLogin.git`
+2. **Cloning**: `git clone https://github.com/RodriguesGS/Listrama.git`
 3. **Install Dependencies**: `npm install or yarn`
 4. **Start Developing**: `cd project-name & npm run start`
 
