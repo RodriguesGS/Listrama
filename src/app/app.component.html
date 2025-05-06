@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Listrama</h1>
 
-  <app-input/>
-  <app-tasks/>
+  <app-input (task)="onTaskCreated($event)"/>
+  <app-tasks [tasks]="tasks"/>
 </div>

@@ -1,22 +1,12 @@
 <div class="container">
     <ul class="list">
-        <li class="item-list">
-            <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label for="">Testando task</label>
-            </div>
-        </li>
-        <li class="item-list">
-            <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label for="">Testando task</label>
-            </div>
-        </li>
-        <li class="item-list">
-            <div class="checkbox-wrapper">
-                <input type="checkbox">
-                <label for="">Testando task</label>
-            </div>
-        </li>
+        @for (task of tasks; track task) {
+            <li class="item-list">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox">
+                    <label for="">{{ task }}</label>
+                </div>
+            </li>
+        }
     </ul>
 </div>
