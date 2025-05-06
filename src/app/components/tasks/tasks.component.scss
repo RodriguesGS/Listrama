@@ -10,11 +10,43 @@
         background-color: #181818;
         padding: 10px;
         border-radius: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+        
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #111;
+            border-radius: 10px;
+        }
+          
+        &::-webkit-scrollbar-thumb {
+            background: #0a0a0a;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: #000;
+            }
+        }
             
         .item-list {
             padding: 15px 5px;
             width: 100%;
             border-bottom: 1px solid #3e3e3e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+
+            &:hover {
+                
+                .btn-delete {
+                    opacity: 1;
+                }
+            }
             
             .checkbox-wrapper {
                 display: flex;
@@ -47,7 +79,18 @@
                         color: #ddd;
                     }
                 }
-            }      
+            }   
+            
+            .btn-delete {
+                cursor: pointer;
+                color: #ddd;
+                opacity: 0;
+                transition: .3s;
+
+                &:hover {
+                    transform: rotate(360deg);
+                }
+            }
         }
     }
 }
