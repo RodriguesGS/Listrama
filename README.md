@@ -1,27 +1,30 @@
+[PROJECT__BADGE]: https://img.shields.io/badge/📱Visit_this_project-000?style=for-the-badge&logo=project
+[PROJECT__URL]: https://listrama.vercel.app
+
 # Listrama
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+A simple Todo List
 
-## Development server
+[![project][PROJECT__BADGE]][PROJECT__URL]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tech Stack
 
-## Code scaffolding
+[![My Skills](https://skillicons.dev/icons?i=angular,ts)](https://skillicons.dev)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+1. **Prerequisites**: `NodeJS, Git 1, Angular CLI`
+2. **Cloning**: `git clone https://github.com/RodriguesGS/Listrama.git`
+3. **Install Dependencies**: `npm install or yarn`
+4. **Start Developing**: `cd project-name & npm run start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contribute
 
-## Running unit tests
+1. **Clone project**: `https://github.com/RodriguesGS/Listrama.git`
+2. **Create feature/branch**: `git checkout -b feature/NAME`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## License
 
-## Running end-to-end tests
+This software is available under the following licenses:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [MIT](https://rem.mit-license.org)
