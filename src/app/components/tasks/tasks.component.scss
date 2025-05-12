@@ -42,7 +42,6 @@
             
 
             &:hover {
-                
                 .btn-delete {
                     opacity: 1;
                 }
@@ -76,7 +75,7 @@
 
                     & + label {
                         text-decoration: line-through;
-                        color: #ddd;
+                        color: #707070;
                     }
                 }
             }   

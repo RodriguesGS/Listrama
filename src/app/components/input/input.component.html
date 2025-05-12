@@ -1,5 +1,5 @@
 <div class="input">
-    <input type="text" placeholder="Create a new Todo" [(ngModel)]="taskText" (keyup.enter)="addTask()">
+    <input autofocus type="text" placeholder="Create a new Todo" [(ngModel)]="taskText" (keyup.enter)="addTask()">
 
     <button class="btn-todo" (click)="addTask()">
         <mat-icon class="todo-icon">arrow_forward</mat-icon>
