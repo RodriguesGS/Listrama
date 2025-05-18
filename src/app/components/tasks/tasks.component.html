@@ -1,15 +1,15 @@
 @if (tasks.length != 0) {
-    <div class="container">
-      <ul class="list">
-        @for (task of tasks; let i = $index; track task) {
-          <li class="item-list">
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label>{{ task }}</label>
-            </div>
-            <mat-icon (click)="deleteTask(i)"  class="btn-delete">close</mat-icon>
-          </li>
-        }
-      </ul>
-    </div>
+  <div class="container">
+    <ul class="list">
+      @for (task of tasks; let i = $index; track task) {
+        <li class="item-list">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" [checked]="task.completed" (change)="toggleCompleted(i)">
+            <label>{{ task.title }}</label>
+          </div>
+          <mat-icon (click)="deleteTask(i)" class="btn-delete">close</mat-icon>
+        </li>
+      }
+    </ul>
+  </div>
 }

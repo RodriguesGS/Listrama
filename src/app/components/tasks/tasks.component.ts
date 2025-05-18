@@ -9,9 +9,13 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './tasks.component.scss'
 })
 export class TasksComponent {
-  @Input() tasks: string[] = [];
+  @Input() tasks: { title: string, completed: boolean }[] = [];
 
   deleteTask(i: number) {
     this.tasks.splice(i, 1)
+  }
+
+  toggleCompleted(i: number) {
+    this.tasks[i].completed = !this.tasks[i].completed;
   }
 }

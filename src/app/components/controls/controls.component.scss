@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+    font-size: 1.2rem;
+    border: 1px solid $main-color;
+    padding: 30px;
+    border-radius: 10px;
+
+    button {
+        border: none;
+        color: $main-color;
+        background-color: transparent;
+        font-size: 1.3rem;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            background-color: $main-color;
+            transition: .3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
